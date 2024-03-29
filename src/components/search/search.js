@@ -15,12 +15,12 @@ export class Search extends DivComponent{
 
     render(){
         this.el.classList.add('search');
-        console.log(this.state);
+        //console.log(this.state);
         this.el.innerHTML = `
             <div class="search__wraper">
                 <input 
                     type="text" 
-                    placeholder="Найти книгу или автора...."
+                    placeholder="Найти фильм...."
                     class="search__input"
                     value="${this.state.searchQuery ? this.state.searchQuery : '' }"
                 />
@@ -31,8 +31,8 @@ export class Search extends DivComponent{
             </button>
         `;
 
-        console.log(this.search);
-        console.log(this.search.bind(this));
+        //console.log(this.search);
+        //console.log(this.search.bind(this));
 
         this.el.querySelector('button').addEventListener('click', this.search.bind(this));
         this.el.querySelector('input').addEventListener('keydown', (event) => {
