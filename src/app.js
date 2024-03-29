@@ -1,3 +1,5 @@
+import './global.css';
+
 import { MainView } from "./views/main/main";
 
 class App{
