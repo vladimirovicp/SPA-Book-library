@@ -9,7 +9,7 @@ export class Header extends DivComponent{
     }
 
     render(){
-        this.el.innerHTML = "";
+        //this.el.innerHTML = "";
         this.el.classList.add('header');
         this.el.innerHTML = `
             <div>
