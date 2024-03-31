@@ -10,6 +10,7 @@ export class MainView extends AbstractView{
 
     state = {
         list: [],
+        total: 0,
         loading: false,
         searchQuery: undefined,
         offset: 0
@@ -34,18 +35,19 @@ export class MainView extends AbstractView{
         if (path === 'searchQuery'){
             this.state.loading = true;
             const data = await this.loadList(this.state.searchQuery, this.state.offset);
-            setTimeout(() => {           
-                this.state.loading = false;
-                this.state.list = data.Search;
-            }, 30000)
-
-            // this.state.loading = false;
-            // this.state.list = data.Search;
+            console.log(data);
+            this.state.loading = false;
+            this.state.list = data.Search;
+/*
+            if(data.Search.length){
+                this.state.total = data.Search.length;
+            } */
         }
 
         if (path === 'list' || path === 'loading'){
             this.render();
         }
+
     }
 
     async loadList(q, offset){
